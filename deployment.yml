@@ -6,13 +6,13 @@ metadata:
     gcb-build-id: a875332a-8efa-4da4-9698-127ec5d78c0c
     gcb-trigger-id: 0498f1b9-a06e-472d-992d-dff18662d470
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"gcb-build-id":"a875332a-8efa-4da4-9698-127ec5d78c0c","gcb-trigger-id":"0498f1b9-a06e-472d-992d-dff18662d470"},"labels":{"app.kubernetes.io/managed-by":"gcp-cloud-build-deploy","app.kubernetes.io/name":"helloworld","app.kubernetes.io/version":"c96e6ede99a8466768a11f75824a4eb3a0ecf823"},"name":"helloworld","namespace":"default"},"spec":{"replicas":5,"selector":{"matchLabels":{"app":"helloworld"}},"template":{"metadata":{"annotations":{"gcb-build-id":"a875332a-8efa-4da4-9698-127ec5d78c0c","gcb-trigger-id":"0498f1b9-a06e-472d-992d-dff18662d470"},"labels":{"app":"helloworld","app.kubernetes.io/managed-by":"gcp-cloud-build-deploy","app.kubernetes.io/name":"helloworld","app.kubernetes.io/version":"c96e6ede99a8466768a11f75824a4eb3a0ecf823"}},"spec":{"containers":[{"image":"karthequian/helloworld:latest","name":"helloworld","ports":[{"containerPort":80}]}]}}}}
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"gcb-build-id":"a875332a-8efa-4da4-9698-127ec5d78c0c","gcb-trigger-id":"0498f1b9-a06e-472d-992d-dff18662d470"},"labels":{"app.kubernetes.io/managed-by":"gcp-cloud-build-deploy","app.kubernetes.io/name":"helloworld-defindal","app.kubernetes.io/version":"c96e6ede99a8466768a11f75824a4eb3a0ecf823"},"name":"helloworld-defindal","namespace":"default"},"spec":{"replicas":5,"selector":{"matchLabels":{"app":"helloworld-defindal"}},"template":{"metadata":{"annotations":{"gcb-build-id":"a875332a-8efa-4da4-9698-127ec5d78c0c","gcb-trigger-id":"0498f1b9-a06e-472d-992d-dff18662d470"},"labels":{"app":"helloworld-defindal","app.kubernetes.io/managed-by":"gcp-cloud-build-deploy","app.kubernetes.io/name":"helloworld-defindal","app.kubernetes.io/version":"c96e6ede99a8466768a11f75824a4eb3a0ecf823"}},"spec":{"containers":[{"image":"karthequian/helloworld:latest","name":"helloworld","ports":[{"containerPort":80}]}]}}}}
   creationTimestamp: "2021-12-03T07:33:47Z"
   generation: 3
   labels:
-    app: helloworld
+    app: helloworld-defindal
     app.kubernetes.io/managed-by: gcp-cloud-build-deploy
-    app.kubernetes.io/name: helloworld
+    app.kubernetes.io/name: helloworld-defindal
     app.kubernetes.io/version: c96e6ede99a8466768a11f75824a4eb3a0ecf823
   managedFields:
   - apiVersion: apps/v1
@@ -81,7 +81,7 @@ metadata:
               f:app.kubernetes.io/version: {}
           f:spec:
             f:containers:
-              k:{"name":"helloworld"}:
+              k:{"name":"helloworld-defindal"}:
                 .: {}
                 f:image: {}
                 f:imagePullPolicy: {}
@@ -133,7 +133,7 @@ metadata:
     manager: kube-controller-manager
     operation: Update
     time: "2021-12-03T08:02:18Z"
-  name: helloworld
+  name: helloworld-defindal
   namespace: default
   resourceVersion: "508785"
   uid: 5ae728b0-a243-4172-b171-57e64e3928ce
@@ -143,7 +143,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: helloworld
+      app: helloworld-defindal
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -156,9 +156,9 @@ spec:
         gcb-trigger-id: 0498f1b9-a06e-472d-992d-dff18662d470
       creationTimestamp: null
       labels:
-        app: helloworld
+        app: helloworld-defindal
         app.kubernetes.io/managed-by: gcp-cloud-build-deploy
-        app.kubernetes.io/name: helloworld
+        app.kubernetes.io/name: helloworld-defindal
         app.kubernetes.io/version: c96e6ede99a8466768a11f75824a4eb3a0ecf823
     spec:
       containers:
