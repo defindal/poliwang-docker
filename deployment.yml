@@ -1,35 +1,204 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "3"
+    gcb-build-id: a875332a-8efa-4da4-9698-127ec5d78c0c
+    gcb-trigger-id: 0498f1b9-a06e-472d-992d-dff18662d470
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"gcb-build-id":"a875332a-8efa-4da4-9698-127ec5d78c0c","gcb-trigger-id":"0498f1b9-a06e-472d-992d-dff18662d470"},"labels":{"app.kubernetes.io/managed-by":"gcp-cloud-build-deploy","app.kubernetes.io/name":"helloworld","app.kubernetes.io/version":"c96e6ede99a8466768a11f75824a4eb3a0ecf823"},"name":"helloworld","namespace":"default"},"spec":{"replicas":5,"selector":{"matchLabels":{"app":"helloworld"}},"template":{"metadata":{"annotations":{"gcb-build-id":"a875332a-8efa-4da4-9698-127ec5d78c0c","gcb-trigger-id":"0498f1b9-a06e-472d-992d-dff18662d470"},"labels":{"app":"helloworld","app.kubernetes.io/managed-by":"gcp-cloud-build-deploy","app.kubernetes.io/name":"helloworld","app.kubernetes.io/version":"c96e6ede99a8466768a11f75824a4eb3a0ecf823"}},"spec":{"containers":[{"image":"karthequian/helloworld:latest","name":"helloworld","ports":[{"containerPort":80}]}]}}}}
+  creationTimestamp: "2021-12-03T07:33:47Z"
+  generation: 3
+  labels:
+    app: helloworld
+    app.kubernetes.io/managed-by: gcp-cloud-build-deploy
+    app.kubernetes.io/name: helloworld
+    app.kubernetes.io/version: c96e6ede99a8466768a11f75824a4eb3a0ecf823
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app: {}
+      f:spec:
+        f:progressDeadlineSeconds: {}
+        f:revisionHistoryLimit: {}
+        f:selector: {}
+        f:strategy:
+          f:rollingUpdate:
+            .: {}
+            f:maxSurge: {}
+            f:maxUnavailable: {}
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:labels:
+              .: {}
+              f:app: {}
+          f:spec:
+            f:containers:
+              k:{"name":"poliwang-docker-1"}:
+                .: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:resources: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+    manager: GoogleCloudConsole
+    operation: Update
+    time: "2021-12-03T07:33:47Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:gcb-build-id: {}
+          f:gcb-trigger-id: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          f:app.kubernetes.io/managed-by: {}
+          f:app.kubernetes.io/name: {}
+          f:app.kubernetes.io/version: {}
+      f:spec:
+        f:replicas: {}
+        f:template:
+          f:metadata:
+            f:annotations:
+              .: {}
+              f:gcb-build-id: {}
+              f:gcb-trigger-id: {}
+            f:labels:
+              f:app.kubernetes.io/managed-by: {}
+              f:app.kubernetes.io/name: {}
+              f:app.kubernetes.io/version: {}
+          f:spec:
+            f:containers:
+              k:{"name":"helloworld"}:
+                .: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":80,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:protocol: {}
+                f:resources: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: "2021-12-03T07:56:11Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:availableReplicas: {}
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:unavailableReplicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-12-03T08:02:18Z"
   name: helloworld
+  namespace: default
+  resourceVersion: "508785"
+  uid: 5ae728b0-a243-4172-b171-57e64e3928ce
 spec:
+  progressDeadlineSeconds: 600
+  replicas: 5
+  revisionHistoryLimit: 10
   selector:
     matchLabels:
       app: helloworld
-  replicas: 5
-  template: 
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
     metadata:
+      annotations:
+        gcb-build-id: a875332a-8efa-4da4-9698-127ec5d78c0c
+        gcb-trigger-id: 0498f1b9-a06e-472d-992d-dff18662d470
+      creationTimestamp: null
       labels:
         app: helloworld
+        app.kubernetes.io/managed-by: gcp-cloud-build-deploy
+        app.kubernetes.io/name: helloworld
+        app.kubernetes.io/version: c96e6ede99a8466768a11f75824a4eb3a0ecf823
     spec:
       containers:
-      - name: helloworld
-        image: karthequian/helloworld:latest
+      - image: karthequian/helloworld:latest
+        imagePullPolicy: Always
+        name: helloworld
         ports:
         - containerPort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
- name: helloworld
-spec:
- type: NodePort
- selector:
-   app: helloworld
- ports:
-   - name: client
-     protocol: TCP
-     port: 80
-     nodePort: 32080
- selector:
-   app: helloworld
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      - image: gcr.io/poliwangi-333802/github.com/defindal/poliwang-docker:402473a
+        imagePullPolicy: IfNotPresent
+        name: poliwang-docker-1
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2021-12-03T07:59:49Z"
+    lastUpdateTime: "2021-12-03T07:59:49Z"
+    message: Deployment does not have minimum availability.
+    reason: MinimumReplicasUnavailable
+    status: "False"
+    type: Available
+  - lastTransitionTime: "2021-12-03T07:33:48Z"
+    lastUpdateTime: "2021-12-03T08:02:18Z"
+    message: ReplicaSet "helloworld-9cd46d5d7" is progressing.
+    reason: ReplicaSetUpdated
+    status: "True"
+    type: Progressing
+  observedGeneration: 3
+  readyReplicas: 1
+  replicas: 6
+  unavailableReplicas: 5
+  updatedReplicas: 5
